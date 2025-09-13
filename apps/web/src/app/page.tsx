@@ -1,20 +1,19 @@
-import HeartButtonSvg from "@/components/heartButtonSvg";
-import SearchButtonSvg from "@/components/searchButtonSvg";
-import { Button } from "@/components/ui/button";
+import Button from "@/components/Button";
+import Card from "@/components/Card";
+import PlusIcon from "@/components/icons/PlusIcon";
+import ShareIcon from "@/components/icons/ShareIcon";
 
 export default function Home() {
    return (
       <>
          <div className="h-screen bg-black-200">
-            <Button className="bg-gray-200 cursor-pointer text-white-200 hover:text-black-200 rounded-2xl  px-10 py-5 ">
-               click
-            </Button>
-            <Button className="bg-gray-200 text-white-200 cursor-pointer  hover:text-black-200 rounded-2xl  px-10 py-5 ">
-               click
-            </Button>
-            <SearchButtonSvg />
-            <HeartButtonSvg />
+            <Button variant="primary" text="Add new" startIcon={<PlusIcon />} />
+            <Button variant="secondary" text="Share" startIcon={<ShareIcon />} />
+            <div className="flex">
 
+               <Card type="twitter" link="https://x.com/F1JayyUK/status/1966747308495622283" title="ind vs pak" />
+               <Card type="youtube" link="https://www.youtube.com/watch/gc5b5BixkHs?si=EwvxdrOs9qXPs8Z4" title="max" />
+            </div>
          </div>
       </>
    );

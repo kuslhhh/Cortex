@@ -1,15 +1,20 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
+/* font */
+/* body {
+  font-family: var(--font-bricolage), sans-serif;
+} */
+
 @theme {
   --color-gray-200: #2d2d2d;
-  --color-white-200: #cbcbcb; 
-  --color-black-200: #121212; 
-  --color-green-200: #a8d8a8; 
-  --color-orange-200: #f38b4d; 
-};
+  --color-white-200: #cbcbcb;
+  --color-black-200: #121212;
+  --color-green-200: #a8d8a8;
+  --color-orange-200: #f38b4d;
+}
 
 @theme inline {
   --color-background: var(--background);
@@ -87,7 +92,7 @@
 }
 
 .dark {
-    --background: oklch(1 0 0);
+  --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);

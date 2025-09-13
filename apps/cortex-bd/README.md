@@ -1,7 +1,7 @@
 # Cortex
 ### Store smarter, think faster
 ---
----
+
 To install dependencies:
 
 ```bash

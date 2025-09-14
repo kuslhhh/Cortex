@@ -3,7 +3,8 @@ import React, { ReactElement } from 'react'
 interface ButtonProps{
    variant: "primary" | "secondary";
    text: string;
-   startIcon?: ReactElement
+   startIcon?: ReactElement;
+   onClick?: () => void;
 }
 
 const variantStyles = {
@@ -11,10 +12,13 @@ const variantStyles = {
    "secondary" : "bg-green-200 text-black-200"
 }
 
-export default function Button({variant, text, startIcon}: ButtonProps) {
+export default function Button({variant, text, startIcon, onClick}: ButtonProps) {
   return (
     <div>
-      <button className={`${variantStyles[variant]} cursor-pointer flex gap-1 items-center justify-center  px-6 py-2 rounded-2xl text-center font-semibold `}>
+      <button 
+         onClick={onClick}
+         className={`${variantStyles[variant]} cursor-pointer flex gap-1 items-center justify-center  px-6 py-2 rounded-2xl text-center font-semibold `}
+      >
          {startIcon}
          {text}
       </button>

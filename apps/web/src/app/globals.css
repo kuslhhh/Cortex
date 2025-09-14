@@ -4,9 +4,9 @@
 @custom-variant dark (&:is(.dark *));
 
 /* font */
-/* body {
+body {
   font-family: var(--font-bricolage), sans-serif;
-} */
+}
 
 @theme {
   --color-gray-200: #2d2d2d;

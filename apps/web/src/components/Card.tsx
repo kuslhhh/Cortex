@@ -18,7 +18,7 @@ export default function Card({
    type
 }: CardProps) {
    return (
-      <div className='bg-gray-200 max-w-80 min-h-48 min-w-72  p-4 rounded-3xl shadow-sm  shadow-[#333333] outline-2  outline-[#333333]'>
+      <div className='bg-gray-200 max-w-80 min-w-72  p-4 rounded-3xl shadow-sm  shadow-[#333333] outline-2  outline-[#333333]'>
          <div className='flex justify-between pb-3'>
             <div className='flex gap-3 justify-center items-center text-white-200'>
                <DocumentIcon />

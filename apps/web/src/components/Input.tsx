@@ -3,12 +3,12 @@
 import React from 'react'
 
 interface InputProps {
-   onChange: () => void;
-   placeholder: string
+   placeholder: string;
+   reference: any
 }
 
 export default function Input(
-   { onChange, placeholder }: InputProps
+   { placeholder, reference }: InputProps
 ) {
    return (
       <div>
@@ -16,7 +16,7 @@ export default function Input(
             type={"text"}
             placeholder={placeholder}
             className='px-4 py-2 outline-0 placeholder:text-[#CBCBCB] border-2 border-black-200 w-96 rounded-2xl m-2'
-            onChange={onChange}
+            ref={reference}
          />
       </div>
    )

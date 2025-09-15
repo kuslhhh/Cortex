@@ -9,9 +9,9 @@ export const addContent = async (req: Request, res: Response, next: NextFunction
 
       console.log(req.body);
 
-      if (!["document", "tweet", "youtube", "link"].includes(type)) {
-         next(new AppError("Invalid content type", Responses.FORBIDDEN))
-      }
+      // if (!["document", "tweet", "youtube", "link"].includes(type)) {
+      //    next(new AppError("Invalid content type", Responses.FORBIDDEN))
+      // }
 
       const content = await prisma.content.create({
          data: {

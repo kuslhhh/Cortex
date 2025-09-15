@@ -13,7 +13,7 @@ export const signinSchema = z.object({
 })
 
 export const addContentSchema = z.object({
-   type: z.enum(["document", "tweet", "youtube", "link"]),
+   type: z.enum(["document", "tweet", "youtube", "link"]).optional(),
    link: z.url(),
    title: z.string().min(1, "Title is requires"),
    description: z.string().optional(),

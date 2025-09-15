@@ -1,7 +1,7 @@
 import React from 'react'
-import Button from '../Button'
-import PlusIcon from '../icons/PlusIcon'
-import ShareIcon from '../icons/ShareIcon'
+import Button from '../../components/Button'
+import PlusIcon from '../../components/icons/PlusIcon'
+import ShareIcon from '../../components/icons/ShareIcon'
 
 interface OnlickProp {
    onClick: () => void;

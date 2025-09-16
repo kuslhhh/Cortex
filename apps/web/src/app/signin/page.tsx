@@ -25,14 +25,16 @@ export default function Home() {
 
       setLoading(true)
       try {
-         const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/signin`, {
+          await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/signin`, {
             username: username,
             password: password
          }, { withCredentials: true })
          alert(`You have Sign in!`)
          router.push("/dashboard")
-      } catch (e: any) {
-         alert(`signin failed ${e.message}`)
+      } catch (e: unknown) {
+         if(e instanceof Error) {
+            alert(`signin failed ${e.message}`)
+         } else alert("Sign in failed")
       } finally {
          setLoading(false)
       }

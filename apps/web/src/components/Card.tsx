@@ -11,6 +11,11 @@ interface CardProps {
    link: string;
    type: "twitter" | "youtube"
 }
+function extractYouTubeID(url: string) {
+   const regex = /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([a-zA-Z0-9_-]{11})/;
+   const match = url.match(regex);
+   return match ? match[1] : null;
+}
 
 export default function Card({
    title,
@@ -41,7 +46,8 @@ export default function Card({
                <div>
                   <iframe
                      className='w-full aspect-video'
-                     src={link.replace("watch", "embed")}
+                     // src={link.replace("watch", "embed")}
+                     src={`https://www.youtube.com/embed/${extractYouTubeID(link)}`}
                      title="YouTube video player"
                      frameBorder="2"
                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

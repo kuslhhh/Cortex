@@ -4,19 +4,18 @@ import Button from '@/components/Button'
 import Input from '@/components/Input'
 import axios from 'axios';
 import Link from 'next/link';
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import React, { useRef, useState } from 'react'
 
 
 export default function Home() {
-
+   const router = useRouter()
    const [loading, setLoading] = useState(false);
 
    const usernameRef = useRef<HTMLInputElement>(null);
    const passwordRef = useRef<HTMLInputElement>(null);
 
    const signup = async () => {
-
 
       const username = usernameRef.current?.value;
       const password = passwordRef.current?.value;
@@ -32,15 +31,16 @@ export default function Home() {
             username: username,
             password: password
          })
-         alert('You have sign up!')
-      } catch (e: any) {
-         alert(`signup failed ${e.message}`)
+         router.push("/signin")
+      } catch (e: unknown) {
+         if (e instanceof Error) {
+            alert(`signin failed ${e.message}`)
+         } else alert("Sign in failed")
       } finally {
          setLoading(false)
       }
-      // redirect("/signin")
+
    }
-   const handleRedirect = () => redirect("/signin")
 
    return (
       <div className='h-screen w-screen bg-black-200 flex justify-center items-center'>

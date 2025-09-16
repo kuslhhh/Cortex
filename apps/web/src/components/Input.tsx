@@ -4,7 +4,7 @@ import React from 'react'
 
 interface InputProps {
    placeholder: string;
-   reference: any
+   reference: React.Ref<HTMLInputElement>
 }
 
 export default function Input(

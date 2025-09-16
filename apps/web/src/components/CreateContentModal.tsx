@@ -6,8 +6,8 @@ import SendIcon from './icons/SendIcon'
 import axios from 'axios'
 
 interface Props {
-   open: any;
-   onClose: any;
+   open: boolean;
+   onClose: () => void;
 }
 
 enum ContentType {

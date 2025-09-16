@@ -19,7 +19,7 @@ export default function Dashboard() {
             await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/protected`, {
                withCredentials: true
             });
-         } catch (e: any) {
+         } catch {
             router.replace("/signin");
          } finally {
             setCheckingAuth(false);

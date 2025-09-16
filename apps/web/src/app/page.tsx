@@ -2,12 +2,13 @@
 
 import Button from "@/components/Button";
 import ArrowIcon from "@/components/icons/ArrowIcon";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+   const router = useRouter();
 
    const handleRedirect = () => {
-      redirect("/signup")
+      router.push("/signup")
    }
 
    return (
